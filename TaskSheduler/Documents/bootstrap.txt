@@ -1,0 +1,18 @@
+﻿bootstrap tutorial link:
+------------------------
+http://www.revillweb.com/tutorials/bootstrap-tutorial/
+
+
+fixed header:
+-------------
+http://getbootstrap.com/examples/navbar-fixed-top/
+
+
+simple sidebars:
+-----------------
+http://startbootstrap.com/template-overviews/simple-sidebar/
+
+
+fotter and others:
+-------------------
+http://getbootstrap.com/components/#navbar-fixed-bottom

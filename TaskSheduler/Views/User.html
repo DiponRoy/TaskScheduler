@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Scheduler</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="/Content/fullcalendar.min.css" rel="stylesheet" />
+        <link href="/Content/fullcalendar.print.css" rel="stylesheet" media='print' />
+        <link href="/Content/toastr.min.css" rel="stylesheet" />
+        <link href="/Content/site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Tash Scheduler</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="/Views/Device.html">Device</a></li>
+                        <li><a href="/Views/Event.html">Event</a></li>
+                        <li class="active"><a href="/Views/User.html">User</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Logged In User <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Setting</a></li>
+                                <li><a href="#">Log Out</a></li>
+                            </ul>
+                        </li>          
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!--section-create-->
+        <div id="sectionCreate" class="row" data-bind="with: createVm" style="display: none">
+            <div class="container" data-bind="spinning: isBusy">
+                <div class="padded">
+                    <h2>Create</h2>
+                    <br/>
+                    <form class="form-horizontal" action="#" data-bind="with: model">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <a class="btn btn-primary" data-bind="click: $root.createDone"> Done</a> 
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Name</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Name" data-bind="value: name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Contact No.</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Contact No." data-bind="value: contactNo"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Email</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Email" data-bind="value: email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Password</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" data-bind="value: password"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4"></label>
+                            <div class="col-md-6 btn-toolbar">
+                                <a class="btn btn-success" data-bind="click: $parent.create">
+                                    Create
+                                </a>
+                                <a class="btn btn-info" data-bind="click: $parent.reset">
+                                    Reset
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>                
+            </div>
+        </div>
+        
+        <!--section-update-->
+        <div id="sectionUpdate" class="row" data-bind="with: updateVm" style="display: none">
+            <div class="container">
+                <div class="padded">
+                    <h2>Update</h2>
+                    <br/>
+                    <form class="form-horizontal" action="#" data-bind="with: model, spinning: isBusy">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <a class="btn btn-primary" data-bind="click: $root.updateDone"> Done</a> 
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Name</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Name" data-bind="value: name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Contact No.</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Contact No." data-bind="value: contactNo"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Email</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Email" data-bind="value: email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Password</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" data-bind="value: password"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> Status</label>
+                            <div class="col-md-6">
+                                <select class="form-control" data-bind="options: $parent.allStatus,
+                                                                optionsText: 'text',
+                                                                optionsValue: 'value',
+                                                                optionsCaption: '--- Please Select ---',
+                                                                value: status"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4"></label>
+                            <div class="col-md-6 btn-toolbar">
+                                <a class="btn btn-success" href="#" data-bind="click: $parent.update">
+                                    Update
+                                </a>
+                                <a class="btn btn-info" href="#" data-bind="click: $parent.reset">
+                                    Reset
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!--section-list-->
+        <div id="sectionList" class="row" data-bind="with: listVm">
+            <div class="container" data-bind="spinning: isBusy">
+                <div class="padded">
+                    <h2>List</h2>
+                    <br/>
+                    <a class="btn btn-primary marginBottom" data-bind="click: $root.showTocreate"> Create</a> 
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Sn</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Contact No.</th>
+                                    <th>Status</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <!-- ko if: models().length > 0 -->  
+                            <tbody data-bind="foreach: models">
+                                <tr>
+                                    <td data-bind="text: $index() + 1"></td>
+                                    <td data-bind="text: name"></td>
+                                    <td data-bind="text: email"></td>
+                                    <td data-bind="text: contactNo"></td>
+                                    <td>
+                                        <!-- ko if: status == 0 -->  
+                                        Active                 
+                                        <!-- /ko -->
+                                        <!-- ko if: status == 1 -->
+                                        Inactive
+                                        <!-- /ko -->
+                                    </td>
+                                    <td class="action">
+                                        <a class="fa fa-pencil fa-2x" title="Update" data-toggle="tooltip" data-bind="click: $root.showToUpdate"></a>                                      
+                                    </td>
+                                    <td class="action">
+                                        <a class="fa fa-remove fa-2x" title="Delete" data-toggle="tooltip" data-bind="click: $root.confirmToDelete"></a>                                      
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- /ko -->
+
+                            <!-- ko if: models().length == 0 -->  
+                            <tbody>
+                                <tr>
+                                    <td colspan="6">
+                                        No element to show.
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- /ko -->
+
+                        </table>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="/Scripts/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+        <script src="/Scripts/json2.min.js" type="text/javascript"></script>
+        <script src="/Scripts/underscore.min.js" type="text/javascript"></script>
+        <script src="/Scripts/moment.min.js" type="text/javascript"></script>
+        <script src="/Scripts/amplify.min.js" type="text/javascript"></script>
+
+        <script src="/Scripts/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/Scripts/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="/Scripts/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="/Scripts/bootbox.min.js" type="text/javascript"></script>
+        <script src="/Scripts/toastr.min.js" type="text/javascript"></script>
+        <script src="../Scripts/spin.min.js" type="text/javascript"></script>
+
+        <script src="/Scripts/knockout-3.2.0.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.activity.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.command.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.dirtyFlag.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.validation.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.mapping-latest.js" type="text/javascript"></script>
+
+        <script src="/Scripts/extensions/knockout.fullCalendar.js" type="text/javascript"></script>
+        <script src="../Scripts/extensions/ko.spinning.js" type="text/javascript"></script>
+
+        <script src="/Scripts/infuser.min.js" type="text/javascript"></script>
+        <script src="/Scripts/TrafficCop.min.js" type="text/javascript"></script>
+        <script src="/Scripts/koExternalTemplateEngine.min.js" type="text/javascript"></script>
+        
+        <!--data context and mockings-->
+        <script src="../Scripts/app/mocks/datacontext.js" type="text/javascript"></script>
+        <script src="../Scripts/app/mocks/datacontext.seed.js" type="text/javascript"></script>
+        <script src="../Scripts/jquery.mockjax.js" type="text/javascript"></script>
+        <script src="../Scripts/app/mocks/mock.user.js" type="text/javascript"></script>
+
+        <script data-main="/Scripts/app/views/user.js" src="/Scripts/require.js" type="text/javascript"></script>
+    </body>
+</html>

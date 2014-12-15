@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Task Scheduler</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+            <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+            <link href="../Content/fullcalendar.min.css" rel="stylesheet" />
+            <link href="../Content/fullcalendar.print.css" rel="stylesheet" media='print' />
+            <link href="../Content/toastr.min.css" rel="stylesheet" />
+        </head>
+        <body>
+            
+            <!-- Site header and navigation -->
+            <header class="top" role="header">
+                <div class="container">
+                    <a href="#" class="navbar-brand pull-left">
+                        BS3 TUTORIAL
+                    </a>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <nav class="navbar-collapse collapse" role="navigation">
+                        <ul class="navbar-nav nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            
+            <!-- Site banner -->
+            <div class="banner">
+                <div class="container">
+                    <div id="calendar" class="col-md-12"></div>
+                </div>
+            </div>
+            
+            
+            <!-- Site banner -->
+            <div class="banner">
+                <div class="container">
+                    <div data-bind="fullCalendar: calendarViewModel"> </div>
+                </div>
+            </div>
+        
+
+            <script src="../Scripts/jquery-2.1.1.min.js"></script>
+        
+            <script src="../Scripts/json2.min.js"></script>
+            <script src="../Scripts/underscore.min.js"></script>
+            <script src="../Scripts/moment.min.js"></script>
+            <script src="../Scripts/amplify.min.js"></script>
+
+            <script src="../Scripts/bootstrap.min.js"></script>
+            <script src="../Scripts/fullcalendar.min.js"></script>
+            <script src="../Scripts/jquery.blockUI.js"></script>
+            <script src="../Scripts/bootbox.min.js"></script>
+            <script src="../Scripts/toastr.js"></script>
+
+            <script src="../Scripts/knockout-3.2.0.js"></script>
+            <script src="../Scripts/knockout.activity.js"></script>
+            <script src="../Scripts/knockout.command.js"></script>
+            <script src="../Scripts/knockout.dirtyFlag.js"></script>
+            <script src="../Scripts/knockout.validation.js"></script>
+            <script src="../Scripts/knockout.mapping-latest.js"></script>
+            
+            <script src="../Scripts/extensions/knockout.fullCalendar.js"></script>
+  
+            <script src="../Scripts/infuser.min.js"></script>
+            <script src="../Scripts/TrafficCop.min.js"></script>
+            <script src="../Scripts/koExternalTemplateEngine.min.js"></script>
+        
+            <script data-main="../Scripts/app/views/home.js" src="../Scripts/require.js"></script>
+        </body>
+    </html>

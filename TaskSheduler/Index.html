@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Scheduler</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/simple-sidebar.css" rel="stylesheet" />
+
+        <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="/Content/fullcalendar.min.css" rel="stylesheet" />
+        <link href="/Content/fullcalendar.print.css" rel="stylesheet" media='print' />
+        <link href="/Content/toastr.min.css" rel="stylesheet" />
+        <link href="/Content/site.css" rel="stylesheet" />
+    </head>
+    <body>
+        
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Tash Scheduler</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Dashboard</a></li>
+                        <li><a href="/Views/Device.html">Device</a></li>
+                        <li><a href="/Views/Event.html">Event</a></li>
+                        <li><a href="/Views/User.html">User</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Logged In User <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Setting</a></li>
+                                <li><a href="#">Log Out</a></li>
+                            </ul>
+                        </li>          
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#">Shortcuts</a>
+                    </li>
+                    <li>
+                        <a href="#">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#">Events</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Simple Sidebar</h1>
+                            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <script src="/Scripts/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+        <script src="/Scripts/json2.min.js" type="text/javascript"></script>
+        <script src="/Scripts/underscore.min.js" type="text/javascript"></script>
+        <script src="/Scripts/moment.min.js" type="text/javascript"></script>
+        <script src="/Scripts/amplify.min.js" type="text/javascript"></script>
+
+        <script src="/Scripts/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/Scripts/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="/Scripts/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="/Scripts/bootbox.min.js" type="text/javascript"></script>
+        <script src="/Scripts/toastr.js" type="text/javascript"></script>
+
+        <script src="/Scripts/knockout-3.2.0.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.activity.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.command.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.dirtyFlag.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.validation.js" type="text/javascript"></script>
+        <script src="/Scripts/knockout.mapping-latest.js" type="text/javascript"></script>
+
+        <script src="/Scripts/extensions/knockout.fullCalendar.js" type="text/javascript"></script>
+        <script src="/Scripts/extensions/ko.spinning.js" type="text/javascript"></script>
+
+        <script src="/Scripts/infuser.min.js" type="text/javascript"></script>
+        <script src="/Scripts/TrafficCop.min.js" type="text/javascript"></script>
+        <script src="/Scripts/koExternalTemplateEngine.min.js" type="text/javascript"></script>
+
+        <script data-main="/Scripts/app/views/device.js" src="/Scripts/require.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+﻿use obserable arry:
+--------------------
+http://stackoverflow.com/questions/27163547/knockoutjs-group-events-by-date
+
+
+binding hander:
+---------------
+http://jsfiddle.net/craigcav/uKCbX/
