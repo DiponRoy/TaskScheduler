@@ -28,14 +28,14 @@
         });
     }
 
-    for (var eventId = 1; i <= 5; i++) {
-        for (var i = 1; i <= 5; i++) {
+    for (var eventId = 1; eventId <= 5; eventId++) {
+        for (var i = 1; i <= 15; i++) {
             db.trainees.add({
                 eventId: eventId,
                 name: 'trainee ' + i,
                 contactNo: '+1234',
                 email: 'trainee' + i + '@gmail.com',
-                status: "0"
+                status: 0
             });
         }
     }

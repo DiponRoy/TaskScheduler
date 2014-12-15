@@ -61,6 +61,7 @@
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\images\ajax_loader_blue.gif" />
     <Content Include="Content\images\ajax_loader_blue_128.gif" />
+    <Content Include="Content\images\default_trainee.png" />
     <Content Include="Content\simple-sidebar.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\toastr.css" />
@@ -110,6 +111,7 @@
     <Content Include="Scripts\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar.min.js" />
     <Content Include="Scripts\GPL-LICENSE.txt" />
+    <Content Include="Scripts\holder.js" />
     <Content Include="Scripts\infuser-amd.js" />
     <Content Include="Scripts\infuser-amd.min.gz.js" />
     <Content Include="Scripts\infuser-amd.min.js" />

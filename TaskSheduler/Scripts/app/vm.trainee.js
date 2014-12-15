@@ -180,7 +180,7 @@ define('vm.trainee.list',
                 self.models([]);
                 self.isBusy(true);
                 service.all({
-                    success: function(data) {
+                    success: function (data) {
                         self.isBusy(false);
                         self.models(data);
                     },
@@ -204,47 +204,49 @@ define('vm.trainee',
         'vm.trainee.list'
     ],
     function (ko, notify, createVm, updateVm, listVm) {
-        
-        var self = this;
-        self.eventId = ko.observable();
-        self.createVm = new createVm();
-        self.updateVm = new updateVm();
-        self.listVm = new listVm();
 
-        /*view model callbacks*/
-        self.createVm.callback = function(model) {
-            self.listVm.load();
-            notify.success('Trainee created successfully.');
-        };
-        self.updateVm.callback = function(model) {
-            self.listVm.load();
-            notify.success('Trainee updated successfully.');
-        };
-        self.listVm.callback = function(model) {
-            self.listVm.models.remove(model);
-            notify.success('Trainee deleted successfully.');
+        var vm = function() {
+            var self = this;
+            self.eventId = ko.observable();
+            self.createVm = new createVm();
+            self.updateVm = new updateVm();
+            self.listVm = new listVm();
+
+            /*view model callbacks*/
+            self.createVm.callback = function(model) {
+                self.listVm.load();
+                notify.success('Trainee created successfully.');
+            };
+            self.updateVm.callback = function(model) {
+                self.listVm.load();
+                notify.success('Trainee updated successfully.');
+            };
+            self.listVm.callback = function(model) {
+                self.listVm.models.remove(model);
+                notify.success('Trainee deleted successfully.');
+            };
+
+            /*list actions*/
+            self.showTocreate = function() {
+                self.createVm.init(self.eventId());
+            };
+            self.showToUpdate = function(item) {
+                self.updateVm.init();
+                self.updateVm.load(item.id);
+            };
+            self.confirmToDelete = function(item) {
+                notify.confirm('Do you want to delete the trainee?', function(confirmed) {
+                    if (confirmed) {
+                        self.listVm.remove(item);
+                    }
+                });
+            };
+
+            self.init = function(eventId) {
+                self.eventId(eventId);
+                self.listVm.load(eventId);
+            };
         };
 
-        /*list actions*/
-        self.showTocreate = function() {
-            self.createVm.init(self.eventId());
-        };
-        self.showToUpdate = function(item) {
-            self.updateVm.init();
-            self.updateVm.load(item.id);
-        };
-        self.confirmToDelete = function(item) {
-            notify.confirm('Do you want to delete the trainee?', function(confirmed) {
-                if (confirmed) {
-                    self.listVm.remove(item);
-                }
-            });
-        };
-
-        self.init = function (eventId) {
-            self.eventId(eventId);
-            self.listVm.load(eventId);
-        };
-
-        return self;
+        return vm;
     });

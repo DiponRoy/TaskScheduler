@@ -3,7 +3,7 @@
         url: "/trainee/all",
         responseTime: 500,
         response: function(settings) {
-            var all = _.where(entitySet.trainees.get(), {id: settings.data.id});
+            var all = _.where(entitySet.trainees.get(), {eventId: settings.data.id});
             this.responseText = _.sortBy(all, function(obj) { return obj.updatedDateTime; }).reverse();
         }
     });

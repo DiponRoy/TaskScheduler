@@ -110,7 +110,7 @@ define('vm.event.update',
             self.callback = null;
 
             self.allDevice = ko.observableArray([]);
-            self.traineeVm = traineeVm;
+            self.traineeVm = new traineeVm();
 
             self.model = new model();
             self.allStatus = ko.observableArray([
@@ -160,6 +160,7 @@ define('vm.event.update',
             self.init = function(id) {
                 self.model.reset();
                 self.errors.showAllMessages(false);
+                
                 self.traineeVm.init(id);
                 var calls = [];
                 calls.push(
