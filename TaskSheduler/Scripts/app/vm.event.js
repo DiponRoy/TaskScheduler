@@ -42,14 +42,14 @@ define('model.event',
 
 /*createVm*/
 define('vm.event.create',
-    ['notify', 'ko', 'model.event', 'vm.trainee', 'dataservice.event', 'dataservice.device'],
-    function(notify, ko, model, traineeVm, eventService, deviceService) {
+    ['jquery', 'notify', 'ko', 'model.event', 'vm.trainee', 'dataservice.event', 'dataservice.device'],
+    function ($, notify, ko, model, traineeVm, eventService, deviceService) {
         var vm = function() {
             var self = this;
             self.callback = null;
 
             self.allDevice = ko.observableArray([]);
-            self.traineeVm = traineeVm;
+            self.traineeVm = new traineeVm();
 
 
             self.model = new model();
@@ -83,7 +83,8 @@ define('vm.event.create',
                 self.errors.showAllMessages(false);
             };
 
-            self.init = function() {
+            self.init = function () {
+                self.traineeVm.listVm.models([]);
                 self.allDevice([]);
                 self.reset();
                 deviceService.all({

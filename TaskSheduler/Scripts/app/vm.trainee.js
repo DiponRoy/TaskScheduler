@@ -55,6 +55,7 @@ define('vm.trainee.create',
             self.model = new model();
             self.errors = ko.validation.group(self.model);
             self.isBusy = ko.observable(false);
+            self.showModal = ko.observable(false);
 
             self.create = function() {
                 if (self.errors().length > 0) {
@@ -68,6 +69,7 @@ define('vm.trainee.create',
                         self.reset();
                         self.isBusy(false);
                         self.callback(data);
+                        self.closeModal();
                     },
                     error: function() {
                         self.isBusy(false);
@@ -82,9 +84,14 @@ define('vm.trainee.create',
                 self.model.status(0);
                 self.errors.showAllMessages(false);
             };
+            
+            self.closeModal = function () {
+                self.showModal(false);
+            };
 
             self.init = function (id) {
                 self.reset(id);
+                self.showModal(true);
             };
         };
 
@@ -107,6 +114,7 @@ define('vm.trainee.update',
             ]);
             self.errors = ko.validation.group(self.model);
             self.isBusy = ko.observable(false);
+            self.showModal = ko.observable(false);
 
             self.load = function(id) {
                 self.isBusy(true);
@@ -133,6 +141,7 @@ define('vm.trainee.update',
                     success: function(data) {
                         self.reset();
                         self.callback(data);
+                        self.closeModal();
                     },
                     error: function() {
                         notify.error('error to update trainee.');
@@ -145,9 +154,13 @@ define('vm.trainee.update',
                 self.load(self.model.id());
             };
 
+            self.closeModal = function() {
+                self.showModal(false);
+            };
             self.init = function() {
                 self.model.reset();
                 self.errors.showAllMessages(false);
+                self.showModal(true);
             };
 
         };
@@ -214,11 +227,11 @@ define('vm.trainee',
 
             /*view model callbacks*/
             self.createVm.callback = function(model) {
-                self.listVm.load();
+                self.listVm.load(self.eventId());
                 notify.success('Trainee created successfully.');
             };
             self.updateVm.callback = function(model) {
-                self.listVm.load();
+                self.listVm.load(self.eventId());
                 notify.success('Trainee updated successfully.');
             };
             self.listVm.callback = function(model) {
@@ -227,7 +240,7 @@ define('vm.trainee',
             };
 
             /*list actions*/
-            self.showTocreate = function() {
+            self.showToCreate = function () {
                 self.createVm.init(self.eventId());
             };
             self.showToUpdate = function(item) {
