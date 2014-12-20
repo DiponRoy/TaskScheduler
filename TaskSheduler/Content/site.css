@@ -1,4 +1,8 @@
-﻿.resize-vertical {
+﻿.no-marginBottom {
+    margin-bottom: 0px;
+}
+
+.resize-vertical {
     resize: vertical
 }
 
