@@ -42,14 +42,13 @@ define('model.event',
 
 /*createVm*/
 define('vm.event.create',
-    ['jquery', 'notify', 'ko', 'model.event', 'vm.trainee', 'dataservice.event', 'dataservice.device'],
-    function ($, notify, ko, model, traineeVm, eventService, deviceService) {
+    ['jquery', 'notify', 'ko', 'model.event', 'dataservice.event', 'dataservice.device'],
+    function ($, notify, ko, model, eventService, deviceService) {
         var vm = function() {
             var self = this;
             self.callback = null;
 
             self.allDevice = ko.observableArray([]);
-            self.traineeVm = new traineeVm();
 
 
             self.model = new model();
@@ -67,7 +66,6 @@ define('vm.event.create',
                     success: function(data) {
                         self.reset();
                         self.isBusy(false);
-                        self.traineeVm.init(data.id);
                         self.callback(data);
                     },
                     error: function() {
@@ -84,7 +82,6 @@ define('vm.event.create',
             };
 
             self.init = function () {
-                self.traineeVm.listVm.models([]);
                 self.allDevice([]);
                 self.reset();
                 deviceService.all({
@@ -250,6 +247,9 @@ define('vm.event',
         self.createVm.callback = function(model) {
             self.listVm.load();
             notify.success('Event created successfully.');
+            
+            config.translate(sections.update, sections.create);
+            self.updateVm.init(model.id);
         };
         self.updateVm.callback = function(model) {
             self.listVm.load();

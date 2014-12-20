@@ -226,15 +226,15 @@ define('vm.trainee',
             self.listVm = new listVm();
 
             /*view model callbacks*/
-            self.createVm.callback = function(model) {
+            self.createVm.callback = function (model) {
                 self.listVm.load(self.eventId());
                 notify.success('Trainee created successfully.');
             };
-            self.updateVm.callback = function(model) {
+            self.updateVm.callback = function (model) {
                 self.listVm.load(self.eventId());
                 notify.success('Trainee updated successfully.');
             };
-            self.listVm.callback = function(model) {
+            self.listVm.callback = function (model) {
                 self.listVm.models.remove(model);
                 notify.success('Trainee deleted successfully.');
             };
@@ -243,7 +243,7 @@ define('vm.trainee',
             self.showToCreate = function () {
                 self.createVm.init(self.eventId());
             };
-            self.showToUpdate = function(item) {
+            self.showToUpdate = function (item) {
                 self.updateVm.init();
                 self.updateVm.load(item.id);
             };
