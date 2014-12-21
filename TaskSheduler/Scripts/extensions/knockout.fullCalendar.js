@@ -16,8 +16,8 @@
         // This method is called to initialize the node, and will also be called again if you change what the grid is bound to
         update: function (element, viewModelAccessor) {
             var viewModel = viewModelAccessor();
-            element.innerHTML = "";
-
+            $(element).html('');
+            $(element).removeAttr('class');
             $(element).fullCalendar({
                 events: ko.utils.unwrapObservable(viewModel.events),
                 header: viewModel.header,

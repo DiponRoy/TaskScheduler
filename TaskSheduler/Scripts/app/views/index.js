@@ -16,162 +16,73 @@
     }
 
     function boot() {
-        require(['jquery', 'ko', 'moment'], function ($, ko, moment) {
+        require(['jquery', 'ko', 'moment'],
+            function($, ko, moment, eventService) {
+                
+                /* initialize the external events
+-----------------------------------------------------------------*/
+                var i = 0;
+                $('#external-events .fc-event').each(function () {
+
+                    // store data so the calendar knows to render an event upon drop
+                    $(this).data('event', {
+                        title: $.trim($(this).text()), // use the element's text as the event title
+                        stick: true, // maintain when user navigates (see docs on the renderEvent method)
+                        id: ++i
+                    });
+
+                    // make the event draggable using jQuery UI
+                    $(this).draggable({
+                        zIndex: 999,
+                        revert: true,      // will cause the event to go back to its
+                        revertDuration: 0  //  original position after the drag
+                    });
+
+                });
 
 
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-            
-            //$('#calendar').fullCalendar({
-            //    defaultDate: '2014-12-12',
-            //    editable: true,
-            //    eventLimit: true, // allow "more" link when too many events
-            //    events: [
-            //        {
-            //            title: 'All Day Event',
-            //            start: '2014-12-01'
-            //        },
-            //        {
-            //            title: 'Long Event',
-            //            start: '2014-12-07',
-            //            end: '2014-12-10'
-            //        },
-            //        {
-            //            id: 999,
-            //            title: 'Repeating Event',
-            //            start: '2014-12-09T16:00:00'
-            //        },
-            //        {
-            //            id: 999,
-            //            title: 'Repeating Event',
-            //            start: '2014-12-16T16:00:00'
-            //        },
-            //        {
-            //            title: 'Conference',
-            //            start: '2014-12-12',
-            //            end: '2014-12-13'
-            //        },
-            //        {
-            //            title: 'Meeting',
-            //            start: '2014-12-12T10:30:00',
-            //            end: '2014-12-12T12:30:00'
-            //        },
-            //        {
-            //            title: 'Lunch',
-            //            start: '2014-12-12T12:00:00'
-            //        },
-            //        {
-            //            title: 'Meeting',
-            //            start: '2014-12-12T14:30:00'
-            //        },
-            //        {
-            //            title: 'Happy Hour',
-            //            start: '2014-12-12T17:30:00'
-            //        },
-            //        {
-            //            title: 'Dinner',
-            //            start: '2014-12-12T20:00:00'
-            //        },
-            //        {
-            //            title: 'Birthday Party',
-            //            start: '2014-12-13T07:00:00'
-            //        },
-            //        {
-            //            title: 'Click for Google',
-            //            url: 'http://google.com/',
-            //            start: '2014-12-28'
-            //        }
-            //    ]
-            //});
-            
+                /* initialize the calendar
+                -----------------------------------------------------------------*/
 
-
-            function eventListVm() {
-
-                var self = this;
-
-                self.items = ko.observableArray([
-                    {
-                        title: 'All Day Event',
-                        start: '2014-12-01'
-                    },
-                    {
-                        title: 'Long Event',
-                        start: '2014-12-07',
-                        end: '2014-12-10'
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: '2014-12-09T16:00:00'
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: '2014-12-16T16:00:00'
-                    },
-                    {
-                        title: 'Conference',
-                        start: '2014-12-12',
-                        end: '2014-12-13'
-                    },
-                    {
-                        title: 'Meeting',
-                        start: '2014-12-12T10:30:00',
-                        end: '2014-12-12T12:30:00'
-                    },
-                    {
-                        title: 'Lunch',
-                        start: '2014-12-12T12:00:00'
-                    },
-                    {
-                        title: 'Meeting',
-                        start: '2014-12-12T14:30:00'
-                    },
-                    {
-                        title: 'Happy Hour',
-                        start: '2014-12-12T17:30:00'
-                    },
-                    {
-                        title: 'Dinner',
-                        start: '2014-12-12T20:00:00'
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: '2014-12-13T07:00:00'
-                    },
-                    {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: '2014-12-28'
-                    }
-                ]);
-                self.calendarViewModel = new ko.fullCalendar.viewModel({
-                    events: self.items,
+                $('#calendar').fullCalendar({
                     header: {
                         left: 'prev,next today',
                         center: 'title',
                         right: 'month,agendaWeek,agendaDay'
                     },
                     editable: true,
-                    eventLimit: true,
+                    droppable: true, // this allows things to be dropped onto the calendar
+                    
+                    drop: function (date, jsEvent, ui) {
+
+                        var self = this;
+                        alert('datetime: ' + moment(date).format('llll'));
+                        alert('event id: ' + $(this).text());
+                        
+                        // is the "remove after drop" checkbox checked?
+                        if ($('#drop-remove').is(':checked')) {
+                            // if so, remove the element from the "Draggable Events" list
+                            $(this).remove();
+                        }
+                    },
+                    
+                    eventDrop: function (event, delta, revertFunc, jsEvent, ui, view) {
+                        alert('schedule: ' + event.id);
+                        alert('date: ' + delta.asDays());
+                        if (!confirm("Are you sure about this change?")) {
+                            revertFunc();
+                        }
+                    },
+                    
+                    /*clicked on scheduled event*/
+                    eventClick: function(calEvent, jsEvent, view) {
+                        alert('schedule: ' + calEvent.id);
+                    }
                 });
 
-                self.click = function () {
 
-                };
 
-            }
-
-            var vm = new eventListVm();
-            ko.applyBindings(vm);
-
-		
         });
-
-
     }
 
     defineJslibraries();
