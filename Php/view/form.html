@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from heyflat.com/themes/todo/form.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 06 Sep 2013 20:43:15 GMT -->
+<head>
+    <meta charset="utf-8"/>
+    <title>Web Application | todo</title>
+    <meta name="description"
+          content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/font-awesome.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/app.v1.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/font.css" type="text/css" cache="false"/>
+    <link rel="stylesheet" href="../css/toastr.css" type="text/css"/>
+</head>
+<body>
+<section class="hbox stretch"> <!-- .aside -->
+    <aside class="bg-dark aside-sm" id="nav">
+        <section class="vbox">
+            <header class="dker nav-bar"><a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen"
+                                            data-target="body"> <i class="icon-reorder"></i> </a> <a href="#"
+                                                                                                     class="nav-brand"
+                                                                                                     data-toggle="fullscreen">todo</a>
+                <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i
+                        class="icon-comment-alt"></i> </a></header>
+            <footer class="footer bg-gradient hidden-xs"><a href="modal.lockme.html" data-toggle="ajaxModal"
+                                                            class="btn btn-sm btn-link m-r-n-xs pull-right"> <i
+                    class="icon-off"></i> </a> <a href="#nav" data-toggle="class:nav-vertical"
+                                                  class="btn btn-sm btn-link m-l-n-sm"> <i class="icon-reorder"></i>
+            </a></footer>
+            <section>
+                <div class="lter nav-user hidden-xs pos-rlt">
+                    <div class="nav-avatar pos-rlt"><a href="#" class="thumb-sm avatar animated rollIn"
+                                                       data-toggle="dropdown"> <img src="images/avatar.jpg" alt=""
+                                                                                    class=""> <span
+                            class="caret caret-white"></span> </a>
+                        <ul class="dropdown-menu m-t-sm animated fadeInLeft"><span class="arrow top"></span>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a></li>
+                            <li class="divider"></li>
+                            <li><a href="docs.html">Help</a></li>
+                            <li><a href="signin.html">Logout</a></li>
+                        </ul>
+                        <div class="visible-xs m-t m-b"><a href="#" class="h3">John.Smith</a>
+
+                            <p><i class="icon-map-marker"></i> London, UK</p></div>
+                    </div>
+                    <div class="nav-msg"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b
+                            class="badge badge-white count-n">2</b> </a>
+                        <section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
+                            <div class="arrow left"></div>
+                            <section class="panel bg-white">
+                                <header class="panel-heading"><strong>You have <span class="count-n">2</span>
+                                    notifications</strong></header>
+                                <div class="list-group"><a href="#" class="media list-group-item"> <span
+                                        class="pull-left thumb-sm"> <img src="images/avatar.jpg" alt="John said"
+                                                                         class="img-circle"> </span> <span
+                                        class="media-body block m-b-none"> Use awesome animate.css<br> <small
+                                        class="text-muted">28 Aug 13
+                                </small> </span> </a> <a href="#" class="media list-group-item"> <span
+                                        class="media-body block m-b-none"> 1.0 initial released<br> <small
+                                        class="text-muted">27 Aug 13
+                                </small> </span> </a></div>
+                                <footer class="panel-footer text-sm"><a href="#" class="pull-right"><i
+                                        class="icon-cog"></i></a> <a href="#">See all the notifications</a></footer>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+                <nav class="nav-primary hidden-xs">
+                    <ul class="nav">
+                        <li><a href="index-2.html"> <i class="icon-eye-open"></i> <span>Discover</span> </a></li>
+                        <li class="dropdown-submenu active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-beaker"></i> <span>UI kit</span> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="buttons.html">Buttons</a></li>
+                                <li><a href="icons.html"> <b class="badge pull-right">302</b>Icons </a></li>
+                                <li><a href="grid.html">Grid</a></li>
+                                <li><a href="widgets.html"> <b class="badge bg-primary pull-right">8</b>Widgets </a>
+                                </li>
+                                <li><a href="components.html"> <b class="badge pull-right">18</b>Components </a></li>
+                                <li><a href="list.html">List groups</a></li>
+                                <li><a href="table.html">Table</a></li>
+                                <li><a href="form.html">Form</a></li>
+                                <li><a href="chart.html">Chart</a></li>
+                                <li><a href="calendar.html">Fullcalendar</a></li>
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="signin.html">Signin page</a></li>
+                                <li><a href="signup.html">Signup page</a></li>
+                                <li><a href="404.html">404 page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="mail.html"> <b class="badge bg-primary pull-right">3</b> <i
+                                class="icon-envelope-alt"></i> <span>Mail</span> </a></li>
+                        <li><a href="tasks.html"> <i class="icon-tasks"></i> <span>Tasks</span> </a></li>
+                        <li><a href="notes.html"> <i class="icon-pencil"></i> <span>Notes</span> </a></li>
+                        <li><a href="timeline.html"> <i class="icon-time"></i> <span>Timeline</span> </a></li>
+                    </ul>
+                </nav>
+            </section>
+        </section>
+    </aside>
+    <!-- /.aside --> <!-- .vbox -->
+    <section id="content">
+        <section class="vbox">
+            <header class="header bg-dark bg-gradient">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#basic" data-toggle="tab">Validate</a></li>
+                    <li class=""><a href="#element" data-toggle="tab">Elements</a></li>
+                    <li class=""><a href="#wizard" data-toggle="tab">Form wizard</a></li>
+                </ul>
+            </header>
+            <section class="scrollable wrapper">
+                <div class="tab-content">
+                    <section class="tab-pane active" id="basic">
+                        <form class="form-horizontal" method="get" data-validate="parsley">
+                            <div class="form-group m-t-lg"><label class="col-sm-2 control-label">Photo</label>
+
+                                <div class="col-sm-4 media m-t-none">
+                                    <div class="bg-light pull-left text-center media-lg thumb-lg padder-v"><i
+                                            class="icon-user inline icon-light icon-3x m-t-lg m-b-lg"></i></div>
+                                    <div class="media-body"><input type="file" name="file" title="Change"
+                                                                   class="btn btn-sm btn-info m-b-sm file-input"><br>
+                                        <button class="btn btn-sm btn-default">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label">Email</label>
+
+                                <div class="col-sm-4"><input type="text" name="email" placeholder="test@example.com"
+                                                             class="bg-focus form-control" data-required="true"
+                                                             data-type="email"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label">Password</label>
+
+                                <div class="col-sm-4"><input type="password" name="password" placeholder="Password"
+                                                             class="bg-focus form-control">
+
+                                    <div class="line line-dashed m-t-lg"></div>
+                                </div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label">Username</label>
+
+                                <div class="col-sm-4"><input type="text" name="username" placeholder="Username"
+                                                             data-required="true" class="form-control"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label">Account</label>
+
+                                <div class="col-sm-4"><select name="account" class="form-control">
+                                    <option value="1">Editor</option>
+                                    <option value="0">Admin</option>
+                                </select></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label">Registered</label>
+
+                                <div class="col-lg-9"><input type="text" class="combodate form-control"
+                                                             data-format="DD-MM-YYYY HH:mm"
+                                                             data-template="D MMM YYYY - HH : mm" name="datetime"
+                                                             value="21-12-2012 20:30"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-2 control-label">Profile</label>
+
+                                <div class="col-sm-10">
+                                    <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar"
+                                         data-target="#editor">
+                                        <div class="btn-group"><a class="btn btn-white btn-sm dropdown-toggle"
+                                                                  data-toggle="dropdown" title="Font"><i
+                                                class="icon-font"></i><b class="caret"></b></a>
+                                            <ul class="dropdown-menu"></ul>
+                                        </div>
+                                        <div class="btn-group"><a class="btn btn-white btn-sm dropdown-toggle"
+                                                                  data-toggle="dropdown" title="Font Size"><i
+                                                class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                                                <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                                                <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group"><a class="btn btn-white btn-sm" data-edit="bold"
+                                                                  title="Bold (Ctrl/Cmd+B)"><i
+                                                class="icon-bold"></i></a> <a class="btn btn-white btn-sm"
+                                                                              data-edit="italic"
+                                                                              title="Italic (Ctrl/Cmd+I)"><i
+                                                class="icon-italic"></i></a> <a class="btn btn-white btn-sm"
+                                                                                data-edit="strikethrough"
+                                                                                title="Strikethrough"><i
+                                                class="icon-strikethrough"></i></a> <a class="btn btn-white btn-sm"
+                                                                                       data-edit="underline"
+                                                                                       title="Underline (Ctrl/Cmd+U)"><i
+                                                class="icon-underline"></i></a></div>
+                                        <div class="btn-group"><a class="btn btn-white btn-sm"
+                                                                  data-edit="insertunorderedlist" title="Bullet list"><i
+                                                class="icon-list-ul"></i></a> <a class="btn btn-white btn-sm"
+                                                                                 data-edit="insertorderedlist"
+                                                                                 title="Number list"><i
+                                                class="icon-list-ol"></i></a> <a class="btn btn-white btn-sm"
+                                                                                 data-edit="outdent"
+                                                                                 title="Reduce indent (Shift+Tab)"><i
+                                                class="icon-indent-left"></i></a> <a class="btn btn-white btn-sm"
+                                                                                     data-edit="indent"
+                                                                                     title="Indent (Tab)"><i
+                                                class="icon-indent-right"></i></a></div>
+                                        <div class="btn-group"><a class="btn btn-white btn-sm" data-edit="justifyleft"
+                                                                  title="Align Left (Ctrl/Cmd+L)"><i
+                                                class="icon-align-left"></i></a> <a class="btn btn-white btn-sm"
+                                                                                    data-edit="justifycenter"
+                                                                                    title="Center (Ctrl/Cmd+E)"><i
+                                                class="icon-align-center"></i></a> <a class="btn btn-white btn-sm"
+                                                                                      data-edit="justifyright"
+                                                                                      title="Align Right (Ctrl/Cmd+R)"><i
+                                                class="icon-align-right"></i></a> <a class="btn btn-white btn-sm"
+                                                                                     data-edit="justifyfull"
+                                                                                     title="Justify (Ctrl/Cmd+J)"><i
+                                                class="icon-align-justify"></i></a></div>
+                                        <div class="btn-group"><a class="btn btn-white btn-sm dropdown-toggle"
+                                                                  data-toggle="dropdown" title="Hyperlink"><i
+                                                class="icon-link"></i></a>
+
+                                            <div class="dropdown-menu">
+                                                <div class="input-group m-l-xs m-r-xs"><input
+                                                        class="form-control input-sm" placeholder="URL" type="text"
+                                                        data-edit="createLink"/>
+
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-white btn-sm" type="button">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="btn btn-white btn-sm" data-edit="unlink" title="Remove Hyperlink"><i
+                                                    class="icon-cut"></i></a></div>
+                                        <div class="btn-group"><a class="btn btn-white btn-sm"
+                                                                  title="Insert picture (or just drag & drop)"
+                                                                  id="pictureBtn"><i class="icon-picture"></i></a>
+                                            <input type="file" data-role="magic-overlay" data-target="#pictureBtn"
+                                                   data-edit="insertImage"/></div>
+                                        <div class="btn-group"><a class="btn btn-white btn-sm" data-edit="undo"
+                                                                  title="Undo (Ctrl/Cmd+Z)"><i
+                                                class="icon-undo"></i></a> <a class="btn btn-white btn-sm"
+                                                                              data-edit="redo"
+                                                                              title="Redo (Ctrl/Cmd+Y)"><i
+                                                class="icon-repeat"></i></a></div>
+                                        <input type="text" class="form-control-trans pull-left" data-edit="inserttext"
+                                               id="voiceBtn" x-webkit-speech="" style="width:25px;height:28px;"></div>
+                                    <div id="editor" class="form-control"
+                                         style="overflow:scroll;height:250px;max-height:250px"> Go ahead&hellip; </div>
+                                    <div class="checkbox"><label> <input name="agree" type="checkbox"> Agree the <a
+                                            href="#">terms and policy</a> </label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button type="submit" class="btn btn-white">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                    <section class="tab-pane" id="element">
+                        <div> Radio and Checkbox (Retina display)</div>
+                        <div class="row pull-in">
+                            <div class="col-sm-6"> <!-- radio -->
+                                <div class="radio"><label class="radio-custom"> <input type="radio" name="radio"
+                                                                                       checked="checked"> <i
+                                        class="icon-circle-blank"></i> Item one checked </label></div>
+                                <div class="radio"><label class="radio-custom"> <input type="radio" name="radio"> <i
+                                        class="icon-circle-blank"></i> Item two </label></div>
+                                <div class="radio"><label class="radio-custom"> <input type="radio" name="radio"
+                                                                                       disabled="disabled"> <i
+                                        class="icon-circle-blank"></i> Item three disabled </label></div>
+                                <div class="radio"><label class="radio-custom"> <input type="radio" checked="checked"
+                                                                                       disabled="disabled"> <i
+                                        class="icon-circle-blank"></i> Item four checked disabled </label></div>
+                            </div>
+                            <div class="col-sm-6"> <!-- checkbox -->
+                                <div class="checkbox"><label class="checkbox-custom"> <input type="checkbox"
+                                                                                             name="checkboxA"
+                                                                                             checked="checked"> <i
+                                        class="icon-unchecked"></i> Item one checked </label></div>
+                                <div class="checkbox"><label class="checkbox-custom"> <input type="checkbox"
+                                                                                             name="checkboxB" id="2"> <i
+                                        class="icon-unchecked"></i> Item two </label></div>
+                                <div class="checkbox"><label class="checkbox-custom"> <input type="checkbox"
+                                                                                             name="checkboxC"
+                                                                                             disabled="disabled"> <i
+                                        class="icon-unchecked"></i> Item three disabled </label></div>
+                                <div class="checkbox"><label class="checkbox-custom"> <input type="checkbox"
+                                                                                             name="checkboxD"
+                                                                                             checked="checked"
+                                                                                             disabled="disabled"> <i
+                                        class="icon-unchecked"></i> Item four checked disabled </label></div>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="inline pull-left m-r"><p>Select</p>
+
+                                <div id="mySelect" class="select btn-group m-b" data-resize="auto">
+                                    <button type="button" data-toggle="dropdown"
+                                            class="btn btn-white btn-sm dropdown-toggle"><span
+                                            class="dropdown-label"></span> <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li data-value="1" data-selected="true"><a href="#">Item One</a></li>
+                                        <li data-value="2"><a href="#">Item Two</a></li>
+                                        <li data-value="3" data-fizz="buzz"><a href="#">Item Three</a></li>
+                                        <li class="divider"></li>
+                                        <li data-value="4"><a href="#">Item Four</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="inline pull-left m-r"><p>Combobox</p>
+
+                                <div id="myCombobox" class="input-group dropdown combobox m-b input-s-sm"><input
+                                        class="input-sm form-control" name="combobox" type="text">
+
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white dropdown-toggle"
+                                                data-toggle="dropdown"><i class="caret"></i></button>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li data-value="1" data-selected="true"><a href="#">Item One</a></li>
+                                            <li data-value="2"><a href="#">Item Two</a></li>
+                                            <li data-value="3" data-fizz="buzz"><a href="#">Item Three</a></li>
+                                            <li class="divider"></li>
+                                            <li data-value="4"><a href="#">Item Four</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inline pull-left"><p>Spinner</p>
+
+                                <div id="MySpinner" class="spinner input-group m-b input-s-sm"><input type="text"
+                                                                                                      class="input-sm form-control spinner-input"
+                                                                                                      value="1"
+                                                                                                      name="spinner"
+                                                                                                      maxlength="3">
+
+                                    <div class="btn-group btn-group-vertical input-group-btn">
+                                        <button type="button" class="btn btn-white spinner-up"><i
+                                                class="icon-chevron-up"></i></button>
+                                        <button type="button" class="btn btn-white spinner-down"><i
+                                                class="icon-chevron-down"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div><p>Dropdown select</p>
+
+                            <div class="btn-group m-r m-b">
+                                <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"><span
+                                        class="dropdown-label">Option1</span> <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-select">
+                                    <li class="active"><a href="#"><input type="radio" name="d-s-r"
+                                                                          checked="">Option1</a></li>
+                                    <li><a href="#"><input type="radio" name="d-s-r">Option2</a></li>
+                                    <li><a href="#"><input type="radio" name="d-s-r">Option3</a></li>
+                                    <li class="disabled"><a href="#"><input type="radio" name="d-s-r" disabled="">I'm
+                                        disabled</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group m-r m-b">
+                                <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"><span
+                                        class="dropdown-label" data-placeholder="Please select">Please select</span>
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-select">
+                                    <li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
+                                    <li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
+                                    <li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
+                                    <li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
+                                    <li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
+                                </ul>
+                            </div>
+                            <div class="inline v-middle m-b">
+                                <div class="input-group input-s-sm"><input type="text" id="appendedInput"
+                                                                           class="input-sm form-control">
+
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-white btn-sm dropdown-toggle" data-toggle="dropdown">
+                                            <span class="dropdown-label">USD</span> <span class="caret"></span></button>
+                                        <ul class="dropdown-menu dropdown-select pull-right">
+                                            <li class="active"><a href="#"><input type="radio" value="USD"
+                                                                                  name="pay_unit" checked="">USD</a>
+                                            </li>
+                                            <li><a href="#"><input type="radio" value="GBP" name="pay_unit">GBP</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Pillbox</p>
+
+                            <div id="MyPillbox" class="pillbox clearfix m-b">
+                                <ul>
+                                    <li class="label bg-dark">Item One</li>
+                                    <li class="label bg-success">Item Two</li>
+                                    <li class="label bg-warning">Item Three</li>
+                                    <li class="label bg-danger">Item Four</li>
+                                    <li class="label bg-info">Item Five</li>
+                                    <li class="label bg-success">Item Six</li>
+                                    <input type="text" placeHolder="add a pill"></ul>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="inline pull-left m-r"><p>Datepicker</p>
+
+                                <div class="m-b"><input class="input-sm input-s datepicker form-control" size="16"
+                                                        type="text" value="12-02-2013" data-date-format="dd-mm-yyyy">
+                                </div>
+                            </div>
+                            <div class="inline pull-left m-r"><p>Slider</p>
+
+                                <div class="m-b"><input class="slider slider-horizontal form-control" type="text"
+                                                        value="" data-slider-min="5" data-slider-max="20"
+                                                        data-slider-step="1" data-slider-value="10"
+                                                        data-slider-orientation="horizontal"></div>
+                            </div>
+                            <div class="inline pull-left m-b"><p>Switch</p> <label class="switch"> <input
+                                    type="checkbox"> <span></span> </label></div>
+                        </div>
+                        <div><p>Select2</p>
+
+                            <div class="m-b"><select id="select2-option" style="width:260px">
+                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                    <option value="AK">Alaska</option>
+                                    <option value="HI">Hawaii</option>
+                                </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="WA">Washington</option>
+                                </optgroup>
+                                <optgroup label="Mountain Time Zone">
+                                    <option value="AZ">Arizona</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="WY">Wyoming</option>
+                                </optgroup>
+                                <optgroup label="Central Time Zone">
+                                    <option value="AL">Alabama</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="WI">Wisconsin</option>
+                                </optgroup>
+                                <optgroup label="Eastern Time Zone">
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WV">West Virginia</option>
+                                </optgroup>
+                            </select></div>
+                            <div class="m-b"><input type="hidden" id="select2-tags" style="width:260px" value="brown"/>
+                            </div>
+                        </div>
+                        <div class="dropfile visible-lg m-t">
+                            <small>Drag and Drop file here</small>
+                        </div>
+                    </section>
+                    <section class="tab-pane" id="wizard">
+                        <div class="panel">
+                            <div class="wizard clearfix" id="form-wizard">
+                                <ul class="steps">
+                                    <li data-target="#step1" class="active"><span class="badge badge-info">1</span>Step
+                                        1
+                                    </li>
+                                    <li data-target="#step2"><span class="badge">2</span>Step 2</li>
+                                    <li data-target="#step3"><span class="badge">3</span>Step 3</li>
+                                </ul>
+                            </div>
+                            <div class="step-content">
+                                <form>
+                                    <div class="step-pane active" id="step1"><p>Your website:</p> <input type="text"
+                                                                                                         class="form-control"
+                                                                                                         data-trigger="change"
+                                                                                                         data-required="true"
+                                                                                                         data-type="url"
+                                                                                                         placeholder="website">
+                                    </div>
+                                    <div class="step-pane" id="step2"><p>Your email:</p> <input type="text"
+                                                                                                class="form-control"
+                                                                                                data-trigger="change"
+                                                                                                data-required="true"
+                                                                                                data-type="email"
+                                                                                                placeholder="email address">
+                                    </div>
+                                    <div class="step-pane" id="step3">This is step 3</div>
+                                </form>
+                                <div class="actions m-t">
+                                    <button type="button" class="btn btn-white btn-sm btn-prev"
+                                            data-target="#form-wizard" data-wizard="previous" disabled="disabled">Prev
+                                    </button>
+                                    <button type="button" class="btn btn-white btn-sm btn-next"
+                                            data-target="#form-wizard" data-wizard="next" data-last="Finish">Next
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </section>
+    </section>
+    <!-- /.vbox --> </section>
+<script src="css/app.v1.js"></script>
+<!-- Bootstrap --> <!-- app --> <!-- fuelux --> <!-- datepicker --> <!-- slider --> <!-- file input -->
+<!-- combodate -->
+<script src="js/combodate/combodate.js" cache="false"></script>
+<!-- parsley -->
+<script src="js/parsley/parsley.min.js" cache="false"></script>
+<!-- select2 -->
+<script src="js/select2/select2.min.js" cache="false"></script>
+<!-- wysiwyg -->
+<script src="js/wysiwyg/jquery.hotkeys.js" cache="false"></script>
+<script src="js/wysiwyg/bootstrap-wysiwyg.js" cache="false"></script>
+<script src="js/wysiwyg/demo.js" cache="false"></script>
+</body>
+<!-- Mirrored from heyflat.com/themes/todo/form.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 06 Sep 2013 20:43:19 GMT -->
+</html>
